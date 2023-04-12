@@ -1,0 +1,39 @@
+
+
+
+# CREATE A USER
+# POST  http://127.0.0.1:8000/signup
+# Content-Type: application/json
+
+# {
+#   "name": "John Smith",
+#   "email": "john@example.com",
+#   "password": "password123"
+# }
+
+
+
+
+
+
+// LOGIN WITH A USER
+# POST  http://127.0.0.1:8000/login
+# Content-Type: application/json
+
+# {
+#   "name": "John Smith",
+#   "email": "john@example.com",
+#   "password": "password123"
+# }
+
+
+
+
+POST  http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{
+  "name": "John Smith",
+  "email": "john@example.com",
+  "password": "password123X"
+}
