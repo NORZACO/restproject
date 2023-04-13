@@ -1,3 +1,4 @@
+// Define a new Sequelize model for the User table with the provided attributes
 module.exports = (sequelize, Sequelize) => {
     const User = sequelize.define('User', {
         Name: {
@@ -16,11 +17,16 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.DataTypes.BLOB,
             allowNull: false
         },
-    },{
+    }, {
+        // Disable timestamps to prevent Sequelize from automatically adding createdAt and updatedAt fields
         timestamps: false
     });
+
+    // Define a one-to-one association between the User and Result models
     User.associate = function(models) {
         User.hasOne(models.Result);
     };
-    return User
-}
+
+    // Return the User model
+    return User;
+};
